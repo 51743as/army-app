@@ -3,6 +3,9 @@
 Prerequisites:
 Node.js and npm installed
 
+### Playground
+https://army-app-e919d.web.app/
+
 ### 'npm install'
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
