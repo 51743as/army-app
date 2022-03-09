@@ -52,7 +52,7 @@ class App extends React.Component {
 	}
 
 	testRandomTroopsDistribution = () => {
-		if (this.state.numberOfSoldiers > this.state.unitTypes.length && this.state.numberOfInvocations > 1) {
+		if (this.state.numberOfSoldiers >= this.state.unitTypes.length && this.state.numberOfInvocations > 1) {
 			const distributionMap = testDistribution(this.state.numberOfSoldiers, this.state.unitTypes.length, this.state.numberOfInvocations);
 			let items = [];
 			for (let key in distributionMap) {
@@ -64,7 +64,7 @@ class App extends React.Component {
 			});
 			return;
 		}
-		this.setState({...this.state, distributedTroops: [...this.state.distributedTroops, "Error"]});
+		this.setState({...this.state, distributionItems: [...this.state.distributionItems, "Error"]});
 		this.render();
 	}
 
