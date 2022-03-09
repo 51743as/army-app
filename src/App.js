@@ -26,7 +26,7 @@ class App extends React.Component {
 	}
 
 	handleNumberOfSoldiersChange = (value) => {
-			this.setState({numberOfSoldiers: value});
+		this.setState({numberOfSoldiers: value});
 	}
 
 	handleNumberOfInvocationsChange = (value) => {
@@ -34,7 +34,7 @@ class App extends React.Component {
 	}
 
 	handleUnitTypeChange = (value) => {
-			this.setState({...this.state, unitTypes: value});
+		this.setState({...this.state, unitTypes: value});
 	}
 
 	generateRandomTroops = () => {
@@ -75,8 +75,7 @@ class App extends React.Component {
 	render() {
 
 		return (
-
-			<Layout style={{backgroundColor: '#f0f2f5'}}>
+			<Layout>
 				<Header style={{backgroundColor: '#f0f2f5'}}/>
 				<Content style={{padding: '0 50px'}}>
 					<Row>
@@ -84,10 +83,12 @@ class App extends React.Component {
 							<Form layout={"horizontal"}>
 								<Divider orientation="left">Generate Army</Divider>
 								<Form.Item label="Number of soldiers">
-									<InputNumber min={1} value={this.state.numberOfSoldiers} onChange={this.handleNumberOfSoldiersChange}/>
+									<InputNumber min={1} value={this.state.numberOfSoldiers}
+									             onChange={this.handleNumberOfSoldiersChange}/>
 								</Form.Item>
 								<Form.Item label="Unit types">
-									<Select mode="tags" style={{width: '50%'}} placeholder="Unit types" onChange={this.handleUnitTypeChange}>
+									<Select mode="tags" style={{width: '50%'}} placeholder="Unit types"
+									        onChange={this.handleUnitTypeChange}>
 										{this.initializeUnitTypes()}
 									</Select>
 								</Form.Item>
@@ -119,13 +120,16 @@ class App extends React.Component {
 								<Divider orientation="left">Test Distribution</Divider>
 								<Form.Item/>
 								<Form.Item label="Number of invocations">
-									<InputNumber min={1} value={this.state.numberOfInvocations} onChange={this.handleNumberOfInvocationsChange}/>
+									<InputNumber min={1} value={this.state.numberOfInvocations}
+									             onChange={this.handleNumberOfInvocationsChange}/>
 								</Form.Item>
 								<Form.Item>
 									<Divider orientation="left">Actions</Divider>
 									<Space>
-										<Button type="primary" shape="round" size={'default'} onClick={this.testRandomTroopsDistribution}>Test distribution</Button>
-										<Button type="primary" shape="round" size={'default'} onClick={() => this.setState({...this.state, distributionItems: []})}>Clear</Button>
+										<Button type="primary" shape="round" size={'default'} onClick={this.testRandomTroopsDistribution}>Test
+											distribution</Button>
+										<Button type="primary" shape="round" size={'default'}
+										        onClick={() => this.setState({...this.state, distributionItems: []})}>Clear</Button>
 									</Space>
 								</Form.Item>
 								<Form.Item>
@@ -142,11 +146,10 @@ class App extends React.Component {
 									/>
 								</Form.Item>
 							</Form>
-
 						</Col>
 					</Row>
 				</Content>
-				<Footer style={{backgroundColor: '#f0f2f5'}}/>
+				<Footer/>
 			</Layout>
 		);
 	}
